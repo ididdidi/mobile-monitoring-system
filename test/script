@@ -1,0 +1,39 @@
+#!/bin/bash
+echo "Restart the server"
+sudo systemctl stop mosquitto
+sleep 0.5
+sudo systemctl start mosquitto
+sleep 0.5
+
+echo "Getting the server address"
+ipm="$(ip -4 addr show scope global | awk '$1 ~ /^inet/ {print $2}')"
+ip="$(echo $ipm | awk -F"/"'{print $1}')"
+echo "ip = "$ip
+
+echo "Starting the value generation cycle"
+echo "-----------------------------------"
+n=32
+i=0
+
+while [ 1 ]
+do
+    let "number = ($RANDOM % 100)"
+    number=0.7$number
+    number+="Bar"
+    mosquitto_pub -h $ip -t "Company/Engine-room/oil-pressure" -m $number -u "8host" -P "1234"
+
+    let "number = ($RANDOM % 10 + 1495)"
+    number+="об/c"
+    mosquitto_pub -h $ip -t "Company/Engine-room/revs" -m $number -u "8host" -P "1234"
+
+    let "number = ($RANDOM % 10)"
+    number=34.3$number
+    number+="С"
+    mosquitto_pub -h $ip -t "Company/Foundry-Shop/temperature" -m $number -u "8host" -P "1234"
+
+    let "number = ($RANDOM % 10)"
+    number=2.5$number\
+    number+="м/с"
+    mosquitto_pub -h $ip -t "Company/Assembly-line/speed" -m $number -u "8host" -P "1234"
+done
+

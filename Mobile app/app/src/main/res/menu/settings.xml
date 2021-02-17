@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/light"
+        android:icon="@drawable/ic_highlight_white_on_32dp"
+        android:title="@string/light"
+        app:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/autofocus"
+        android:icon="@drawable/ic_center_focus_strong_white_32dp"
+        android:title="@string/focus"
+        app:showAsAction="always">
+    </item>
+    <item
+        android:id="@+id/save"
+        android:icon="@drawable/ic_save_white_32dp"
+        android:title="@string/save"
+        app:showAsAction="always">
+    </item>
+</menu>
