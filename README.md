@@ -45,7 +45,7 @@ Devices use various industrial protocols to communicate with each other, and MQT
 
 Based on the analysis of the requirements for the system, its structural diagram was compiled:
 
-![Pic.1. Structural diagram](./assets/images/structural-diagram.png "Pic.1. Structural diagram")
+![Pic.1. Structural diagram](mofrison.ru/mobile-monitoring-system/assets/images/structural-diagram.png "Pic.1. Structural diagram")
 
 ### 3.1. The algorithm of the application
 In the work of the application, there are four main stages:
@@ -56,7 +56,7 @@ In the work of the application, there are four main stages:
 
 All the steps are presented in the block diagram:
 
-![Pic.2. Block diagram](./assets/images/block-diagram.gif "Pic.2. Block diagram")
+![Pic.2. Block diagram](mofrison.ru/mobile-monitoring-system/assets/images/block-diagram.gif "Pic.2. Block diagram")
 
 ### 3.2. Application Structure
 
@@ -68,7 +68,7 @@ QRDecoder.Barcode   | Detection and decryption of QR codes received in the form 
 Database            | Interaction with the SQLite database
 UI                  | Implementation of the user interface
 
-![Pic.3. Class diagram](./assets/images/class-diagram.jpg "Pic.3. Class diagram")
+![Pic.3. Class diagram](mofrison.ru/mobile-monitoring-system/assets/images/class-diagram.jpg "Pic.3. Class diagram")
 
 ### 3.3. Storage of information
 The information stored in the app is divided into two groups:
@@ -105,7 +105,7 @@ The application database will consist of three tables:
 * _sensors_ — contains the unique names of the sensors
 * _readings_ — stores sensor readings
 
-![Pic.4. Application database](./assets/images/application-database.png "Pic.4. Application database")
+![Pic.4. Application database](mofrison.ru/mobile-monitoring-system/assets/images/application-database.png "Pic.4. Application database")
 
 In the types table, in addition to the id field, which is the primary key, there are four other fields:
 * _type_neme_ — текстовое поле с названием типа датчиков
@@ -200,7 +200,7 @@ done
 ## 5. Graphical user interface
 Four functions are expected for direct user interaction: authentication, setting up a connection to the server, identifying sensors and visualizing their readings. Based on this, the navigation map of the application was compiled:
 
-![Pic.9. Navigation map](./assets/images/navigation-map.png "Pic.9. Navigation map")
+![Pic.9. Navigation map](mofrison.ru/mobile-monitoring-system/assets/images/navigation-map.png "Pic.9. Navigation map")
 
 The authentication screen contains text fields for entering the user name and password, which are used to authenticate the user in the system, the _«Sign in»_ button, which attempts to connect to the server, and a virtual keyboard for entering values in the text fields. Also in the top menu there is a button to go to the settings screen, designed in the form of a gear icon.
 If after clicking on the _«Sign in»_ button, the connection to the server is not established, an error message will be displayed on the screen with a suggestion to check the connection settings. To set up the connection, click on the gear icon in the corner of the screen. This will take you to the settings screen.
