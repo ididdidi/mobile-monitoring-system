@@ -13,18 +13,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ru.ngtu.mcontrol.qrdecoder.camera.CameraSourcePreview
+        <ru.mofrison.MobileMonitoring.qrdecoder.camera.CameraSourcePreview
             android:id="@+id/preview"
             android:layout_width="match_parent"
             android:layout_height="270dp"
             android:scaleType="centerCrop">
 
-            <ru.ngtu.mcontrol.qrdecoder.camera.GraphicOverlay
+            <ru.mofrison.MobileMonitoring.qrdecoder.camera.GraphicOverlay
                 android:id="@+id/graphicOverlay"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-        </ru.ngtu.mcontrol.qrdecoder.camera.CameraSourcePreview>
+        </ru.mofrison.MobileMonitoring.qrdecoder.camera.CameraSourcePreview>
 
         <ListView
             android:id="@+id/lvData"
